@@ -23,7 +23,9 @@
             Console.WriteLine("======Binary Tree elements are======");
             binarySearchTree.Display();
             Console.WriteLine();
-            bool result = binarySearchTree.Search(67, binarySearchTree);
+            Console.WriteLine("Enter a number u want to search");
+            int element = Convert.ToInt32(Console.ReadLine());
+            bool result = binarySearchTree.Search(element, binarySearchTree);
         }
     }
 }
