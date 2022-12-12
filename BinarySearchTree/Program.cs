@@ -22,6 +22,8 @@
 
             Console.WriteLine("======Binary Tree elements are======");
             binarySearchTree.Display();
+            Console.WriteLine();
+            bool result = binarySearchTree.Search(67, binarySearchTree);
         }
     }
 }

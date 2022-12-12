@@ -18,7 +18,8 @@ namespace BinarySearchTree
             this.leftTree = null;
             this.rightTree = null;
         }
-        
+        bool result = false;
+
         public void Insert(T item)
         {
             T currentNodeValue = this.Nodedata;
@@ -59,6 +60,31 @@ namespace BinarySearchTree
                 this.rightTree.Display();
             }
 
+        }
+        public bool Search(T element,BinarySearchTreeBuilder<T> node)
+        {
+            if (node == null)
+            {
+                return false;
+            }
+            if (node.Nodedata.Equals(element))
+            {
+                Console.WriteLine($"Found the element in BTS {node.Nodedata}");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine($"Current element is {node.Nodedata}");
+            }
+            if (element.CompareTo(node.Nodedata)<0)
+            {
+                Search(element, node.leftTree);
+            }
+            if (element.CompareTo(node.Nodedata) > 0)
+            {
+                Search(element, node.rightTree  );
+            }
+            return result;
         }
     }
 }
